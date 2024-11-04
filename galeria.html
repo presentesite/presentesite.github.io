@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Sonya!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo do corpo */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            color: #333;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 123, 255, 0.1);
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            color: #007bff;
+            opacity: 0;
+            animation: fadeSlideIn 1s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        header p {
+            font-size: 1.3em;
+            color: #495057;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeSlideIn 1s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        /* Confetes */
+        .confetti {
+            position: absolute;
+            top: -50px;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 0, 150, 0.8);
+            opacity: 0;
+            animation: confettiFall 3s linear infinite;
+        }
+
+        .confetti:nth-child(odd) {
+            background: rgba(0, 123, 255, 0.8);
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(-100px) rotate(0); opacity: 0.8; }
+            100% { transform: translateY(800px) rotate(720deg); opacity: 0; }
+        }
+
+        /* Ícones interativos no cabeçalho */
+        .icon-links {
+            margin-top: 30px;
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            animation: fadeSlideIn 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .icon-links a {
+            color: #007bff;
+            font-size: 1.5em;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .icon-links a:hover {
+            color: #0056b3;
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* Animação de scroll */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .section h2 {
+            font-size: 2.2em;
+            color: #007bff;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        /* Efeito de brilho */
+        .section h2:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -5px;
+            right: -5px;
+            bottom: 0;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+            filter: blur(5px);
+            transform: skewX(-15deg);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .section h2:hover:before {
+            opacity: 1;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            color: #495057;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* Estilo da galeria */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .gallery .card {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(40px);
+            opacity: 0;
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .gallery .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery .card h3 {
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #007bff;
+            background: rgba(248, 249, 250, 0.85);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Rodapé */
+        footer {
+            background: rgba(0, 123, 255, 0.1);
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 40px;
+            font-size: 1em;
+            color: #495057;
+        }
+
+        /* Animações */
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos responsivos */
+        @media (min-width: 600px) {
+            .gallery {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Feliz Aniversário, Sonya!</h1>
+    <p>Você é a pessoa mais doce e talentosa, e merece todo o amor do mundo!</p>
+    <div class="icon-links">
+        <a href="#about" title="Sobre Sonya"><i class="fas fa-heart"></i></a>
+        <a href="#gallery" title="Galeria de Artes"><i class="fas fa-palette"></i></a>
+        <a href="https://www.instagram.com/sonyaflower2022?igsh=MWp0cWFqb3VqNzRhOQ==" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <!-- Confetes -->
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+</header>
+
+<section class="section" id="about">
+    <h2>Para a Artista mais Doce</h2>
+    <p>Sonya, sua criatividade e gentileza fazem de você uma pessoa única. Que este ano seja repleto de realizações, cores e felicidade!</p>
+</section>
+
+<section class="section">
+    <h2>Sonya, você é Luz!</h2>
+    <p>Seu jeito de iluminar os outros com amor e delicadeza é inspirador. Que a vida continue te dando muitas razões para sorrir!</p>
+</section>
+
+<section class="section">
+    <h2>Um Brilho para o Mundo</h2>
+    <p>Seu talento em arte é um presente que compartilha a beleza com todos nós. Nunca pare de criar e transformar o mundo com suas cores.</p>
+</section>
+
+<section class="section" id="gallery">
+    <h2>Sua Galeria de Artes</h2>
+    <div class="gallery">
+        <!-- Cards de arte -->
+        <div class="card">
+            <img src="https://i.imgur.com/GnLRkZC.jpeg" alt="Arte de Sonya">
+            <h3>Arte 1</h3>
+        </div>
+        <div class="card">
+            <img src="https://i.imgur.com/b8xov1e.png" alt="Arte de Sonya">
+            <h3>Arte 2</h3>
+        </div>
+        <div class="card">
+            <img src="https://i.imgur.com/25WYeXl.png" alt="Arte de Sonya">
+            <h3>Arte 3</h3>
+        </div>
+	<div class="card">
+	    <img src="https://i.imgur.com/wbahc4J.png" alt="Arte da Sonya">
+	    <h3>Arte 4</h3>
+	</div>
+        <div class="card">
+            <img src="https://i.imgur.com/r5hCA5u.png" alt="Arte de Sonya">
+            <h3>Arte 5</h3>
+        </div>
+        <div class="card">
+            <img src="https://i.imgur.com/8mbq3vj.png" alt="Arte de Sonya">
+	    <h3>Arte 6</h3>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Um presente de @janiocfilho. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    // Função de animação no scroll
+    function animateOnScroll() {
+        const elements = document.querySelectorAll('.section, .card');
+        const triggerHeight = window.innerHeight * 0.8;
+
+        elements.forEach((element) => {
+            const elementPosition = element.getBoundingClientRect().top;
+            if (elementPosition < triggerHeight) {
+                element.style.opacity = 1;
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    }
+
+    document.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+
+    // Confetes dinâmicos no header
+    const header = document.querySelector("header");
+    for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.left = `${Math.random() * 100}vw`;
+        confetti.style.animationDelay = `${Math.random() * 3}s`;
+        header.appendChild(confetti);
+    }
+</script>
+
+</body>
+</html>
